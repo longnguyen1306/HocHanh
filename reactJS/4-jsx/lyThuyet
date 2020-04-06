@@ -1,0 +1,8 @@
+
+10./ JSX
+    - JSX ( Javascript Syntax Extention - JS XML ): viết theo kiểu XML thay thế cho React.createElement().
+    - JSX không phải HTML 
+    - Có thể viết như HTML
+    - Thuộc tính class ==> className.
+    - Search google: HTML to JSX
+        + magic.reactjs.net
