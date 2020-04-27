@@ -1,0 +1,74 @@
+	+ $request->only( chuỗi hoặc mãng ) => lọc request
+		* chuỗi => trả về duy nhất 
+		* mãng => các tham số
+	+ $request->except() : loại trừ
+	+ $request->has( chuỗi tên tham số ) 
+	+ $request->input( 'title' ) = $_POST['title'] = $request->title
+
+- Response:
+	+ cách response của laravel: return ở hàm hoặc contoller
+	+ return một view
+	+ return back : trở về trang chủ
+	+ withInput() : trả về cùng với input
+	+ with() ; cso thể đẩy thêm thông tin gì về 
+	+ redirect() ; là object chuyển trang
+
+- fillable;
+- eloquent model;
+	+ ORM ; object relation mapping
+	+ để một model được lưu xuống database ; định nghĩa các field dưới db
+	+ Create(array): tạo ra một object model và lưu xuống db
+		* model chỉ nhận các property đã được liệt kê trong biến fillable
+	+ khởi tạo bằng từ khóa new
+		* new ModelName( $attributes )
+	+ lấy một model từ db
+	+ find( $id ) : lấy model từ db => trả về một object
+	+ find(array) : trả về nhiều object
+	+ findOrFail() : nếu không tìm thấy thì báo lỗi 404
+	+ all() : trả về tất cả 
+	+ not() : không phải
+	+ paginate(tham số item) : phân trang 
+	+ tìm kiếm theo điều kiện
+		* where([điều kiện tìm kiếm])
+		* get(): fech kết quả ra 
+		=> tìm kiếm theo điều kiện thì dùng get() không dùng all()
+	+ model chỉ đọc được db khi gặp các hàm: all(), paginate(), get(), find(), finOrFail(), counts()
+	+ counts() : đếm 
+	+ max()
+	+ min()
+	+ take() : giống limit()
+	+ limit()
+	+ oderBy(field, asc/desc)
+	+ update(): cập nhật dữ liệu
+	+ updateOrCreate(): tạo mới hoặc sửa
+	+ updateOrNew() : giống updateOrCreate()
+	+ firstOrCreate()
+	+ firstOrNew() : giống firstOrCreate()
+	+ delete()
+	+ softDelete(); xóa mềm
+	+ withTrashed(): lấy ra luôn những dữ liệu đã xóa mềm 
+	+ onlyTrash() : chỉ lấy những dữ liệu đã xóa mềm 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
