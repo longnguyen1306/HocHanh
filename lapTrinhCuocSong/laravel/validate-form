@@ -46,3 +46,9 @@
 			'title' => 'Tiêu đề'
 		]
 	}
+
+- hiễn thị lỗi 
+
+	@error('title')
+		{{ messages }}
+	@enderror
