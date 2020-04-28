@@ -1,0 +1,48 @@
+- là một hàm, sau dấu 2 chấm là tham số
+
+- min:6 : ký tự tối thiểu
+- max:9 : ký tự tối da 
+- required : bắt buộc
+- date : bắt buộc là kiểu ngày tháng 
+- email : buộc là dịnh dạng email
+- url	: bắt buộc nhập địa chỉ web
+- alpha	: a-z, 0-9
+- alpha_dash	: a-z, 0-9 và dấu gạch dưới
+- integer	: bắt buộ nhập số
+- ip
+- ipv4
+- ipv6
+
+- unique:(tên bãng cần validate) : đọc xuống db nếu đã tồn tại =>  fales
+
+* ví dụ
+	public funtion rules() {
+		return [
+			'title' => 'required|min:6|max:100'
+		]
+	}
+
+
+- trả về lỗi :
+
+	public function messages() {
+		rerutn [
+			'title.requied' => "Tên không được để trống";
+		]
+	}
+
+	hoặc
+
+	public function messages() {
+		rerutn [
+			'requied' => ":attribute không được để trống";
+		]
+	}
+
+- đặt tên lại các attibute
+
+	public function attibutes() {
+		return [
+			'title' => 'Tiêu đề'
+		]
+	}

@@ -1,0 +1,28 @@
+* Relationship:
+	+ quan hệ giữa các model
+	+ quan hệ 1 -> nhiều:
+		=> model cha:
+			$this->hasMany('Tên class');
+
+		=> model con
+			$this->belongsTo('Tên class');
+
+	+ quan hệ 1 -> 1 
+		=> cả 2 model
+			$this->belongsTo('Tên class');
+
+	+ quan hệ nhiều -> nhiều 
+		=>
+			$this->belongsToMany(' tên model', 'tên bãng liên kết trung gian', 'local key', 'remote key');
+
+** lưu ý 
+	$article->comments => đã đọc xuống db và lấy hết dữ liệu comment ra
+	$article->comments() => chưa đọc xuống db
+
+* Collection:
+
+
+
+
+- vue js với laravel
+

@@ -27,25 +27,3 @@
 			@enswitch
 
 
-* Relationship:
-	+ quan hệ giữa các model
-	+ quan hệ 1 -> nhiều:
-		=> model cha:
-			$this->hasMany('Tên model');
-
-		=> model con
-			$this->belongsTo('Tên model');
-
-	+ quan hệ 1 -> 1 
-		=> cả 2 model
-			$this->belongsTo('Tên model');
-
-	+ quan hệ nhiều -> nhiều 
-		
-* Collection:
-
-
-
-
-- vue js với laravel
-
