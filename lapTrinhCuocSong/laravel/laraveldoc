@@ -59,15 +59,8 @@
 	+ token: là một chuỗi xác minh 	
 		* add vào form {{ csrf_field() }}
 
-
 	+ tạo dữ liệu demo
 		* seeder: bộ tạo dữ liệu 
-
-
-
-
-
-
 
 
 

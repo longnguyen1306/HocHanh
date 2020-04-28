@@ -1,0 +1,51 @@
+* Blade template 
+		+ thông thường viết code php chung với html
+		+ template engine : là bộ chuyển đổi từ dạng code nào đó => code php
+		+ tất cả các file đều có đuôi .blade.php
+		
+	- Quy tắc dựng layout
+		+ giao diện chia thành các phần 
+		+ cấu trúc: extends ( master layout => child layout )
+		+ extends: kế thừa
+
+	- Hiển thị dữ liệu
+		+ xuất một chuỗi: {{  }}
+		+ vòng lặp foreach: @foreach - @endforeach
+		+ for:
+			@for( $i = 1; $i <= 10; $i++ )
+				{{ $i }}
+			@endfor
+
+		+ swith case
+			@switch($a)
+				@case('a')
+					{{ code }}
+				@endcase
+				@case('a')
+					{{ code }}
+				@endcase
+			@enswitch
+
+
+* Relationship:
+	+ quan hệ giữa các model
+	+ quan hệ 1 -> nhiều:
+		=> model cha:
+			$this->hasMany('Tên model');
+
+		=> model con
+			$this->belongsTo('Tên model');
+
+	+ quan hệ 1 -> 1 
+		=> cả 2 model
+			$this->belongsTo('Tên model');
+
+	+ quan hệ nhiều -> nhiều 
+		
+* Collection:
+
+
+
+
+- vue js với laravel
+
