@@ -49,6 +49,35 @@
 	+ withTrashed(): lấy ra luôn những dữ liệu đã xóa mềm 
 	+ onlyTrash() : chỉ lấy những dữ liệu đã xóa mềm 
 	
+- CRUD:
+	=> tạo requet cho mỗi hành động ( php artisan make:requetname )
+	+ create
+	+ update
+	+ delete
+	+ get
+	
+	+ token: là một chuỗi xác minh 	
+		* add vào form {{ csrf_field() }}
+
+
+	+ tạo dữ liệu demo
+		* seeder: bộ tạo dữ liệu 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
