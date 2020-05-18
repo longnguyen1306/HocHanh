@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../vue.js"></script>
+</head>
+<body>
+	<!-- <div id="content">
+		<input type="text" v-on:input="chageValue">
+		<p>{{ name }}</p>
+	</div>
+
+	<script type="text/javascript">
+		new Vue({
+			el: '#content',
+			data: {
+				name: 'Long Duong',
+			},
+			methods: {
+				chageValue: function(e) {
+					this.name = e.target.value;
+				}
+			}
+		});
+	</script> -->
+
+
+	<div id="example">
+	  <p>Original message: "{{ message }}"</p>
+	  <p>Computed reversed message: "{{ reversedMessage }}"</p>
+	</div>
+	<script type="text/javascript">
+	var vm = new Vue({
+	  el: '#example',
+	  data: {
+	    message: 'Long Dương'
+	  },
+	  computed: {
+	    // a computed getter
+	    reversedMessage: function () {
+	      // `this` points to the vm instance
+	      return this.message.split('').reverse().join('')
+	    }
+	  }
+	})
+	</script>
+</body>
+</html>
