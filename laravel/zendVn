@@ -1,0 +1,34 @@
+1./ Cài laravel 
+	- tự cài nha cha => đọc documents: https://laravel.com/docs/7.x
+
+2./ Route
+	- 'user/{name?} : dấu ? có cũng được không có cũng được nếu không có thì lấy tham số mặc định
+
+3./ Route Group
+	- Route Prefixes
+		cách 1
+		+ 	Route::prefix('admin')->group([ 'prefix' => 'admin' ], function () { code });
+
+		cách 2
+		+	Route::->group(function () { code });
+
+4./ Cấu hình laravel
+	- tạo file config trong folder config 
+		return [
+			'key' => 'value',
+			'key_2' => 'value',
+		]
+	- dùng file cấu hình 
+		$test = config('ten_file_config.key')
+
+5./ Controllers
+	- Tạo controller 
+		php artisan make:controller PhotoController --resource
+
+	- Gọi controller tại route
+		Route::resource('photos', 'PhotoController');
+
+5./ Controllers Views
+		
+	- slider.index => thư mục phân cách bằng dấu ( . )
+	- index.blade.php => *.blade.php là bắt buộc
