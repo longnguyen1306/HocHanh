@@ -29,6 +29,5 @@
 		Route::resource('photos', 'PhotoController');
 
 5./ Controllers Views
-		
 	- slider.index => thư mục phân cách bằng dấu ( . )
 	- index.blade.php => *.blade.php là bắt buộc

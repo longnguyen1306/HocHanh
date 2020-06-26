@@ -1,0 +1,19 @@
+1./ Framework Laravel
+	- bộ code có sẵn
+	- theo mô hình chuẩn ( MVC )
+
+2./ Composer
+	- Packet manage ( phần mềm quản lý gói )
+	- Cài gói mới: 
+		composer require vender/Package_name
+	- Remove gói 
+		composer require vender/Package_name
+
+	- vender: chứa code của những thu viện đã cài
+	- composer.json : file config chứa toàn bộ các gói thư viện đã cài đặt  
+	- composer.lock : file khóa version các gói thư viện lúc cài 
+	- composer update: cài đặt và cập nhật file composer.lock
+	- composer create project vender/package_name thu_muc
+
+3./ Cài đặt laravel
+	- composer create project larave/laravel [tên tư mục] 
