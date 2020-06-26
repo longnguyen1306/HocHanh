@@ -1,6 +1,7 @@
 1./ Framework Laravel
 	- bộ code có sẵn
 	- theo mô hình chuẩn ( MVC )
+	- tích hợp sẵn vuejs ( laravel ui )
 
 2./ Composer
 	- Packet manage ( phần mềm quản lý gói )
@@ -13,7 +14,66 @@
 	- composer.json : file config chứa toàn bộ các gói thư viện đã cài đặt  
 	- composer.lock : file khóa version các gói thư viện lúc cài 
 	- composer update: cài đặt và cập nhật file composer.lock
-	- composer create project vender/package_name thu_muc
+	- composer create project vendor/package_name thu_muc
 
 3./ Cài đặt laravel
 	- composer create project larave/laravel [tên tư mục] 
+
+	- chạy server 
+		=> php artisan serve
+
+	* Cấu truc thư mục của laravel
+		- app: chứa controller, model ...
+			- Http: 
+				- Controllers: chứa các controller 
+		- bootstrap: chứa các file khởi động, cache
+		- config: chứa các file cấu hình 
+		- database: 
+			- migration: chứa các file migration 
+		- public: chứa các file đã được build
+		- resources: 
+			- các file js
+			- css
+			- views: file hiên thị 
+		- route: chứa các route 
+		- storage: chứa các file cache
+			+ log: log lỗi ra
+		- test: chứa các unit test 
+		- vendor: chứa các thư viện
+		- .env: enviroment -> biến môi trường
+
+	* artisan:
+		- là một công cụ của laravel và được viết bằng php
+		- make: 
+			+ controller: tạo controller 
+				=> php artisan make:controller [ten_controller]
+			+ model: tạo model
+				=> php artisan make:model [ten_model]
+				- tạo luôn migration
+					=> php artisan make:model [ten_model] -m
+
+		- config: 
+			+ clear: xóa cache config 
+				+ config ở file .env => dịch sang fiole php => chứa ở thư mục cache 
+					=> php artisan config:clear 
+					=> php artisan config:cache
+
+			+ migration: các file php để thao tác với database
+				=> php artisan make:migration creae_[tên_bảng]_table
+				- các câu lẹnh với migration
+					=> php artisan migrate : tạo bảng
+					=> php artisan migrate:rollback : xóa bảng nếu tồn tại
+
+				- Schema:
+					+ bigIncrements: tự động tăng, kiểu big integer
+					+ increment: tự động tăng, kiêu integer
+					+ integer
+					+ string: kiêu varchar
+					+ text
+					+ longText
+					+ char
+					+ date: ngày tháng
+					+ dateTime: ngày giờ 
+					+ double
+					+ float: số thập phân
+					+ timestamps: số giây từ 00:00 01/01/1970
