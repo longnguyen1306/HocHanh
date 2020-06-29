@@ -77,3 +77,70 @@
 					+ double
 					+ float: số thập phân
 					+ timestamps: số giây từ 00:00 01/01/1970
+
+	* Route:
+		- get: Route::get('url', function-hoac-chuoi)
+		- post
+		- put
+		- delete
+		- options
+		- path
+
+		- đặt tên cho route:
+			=> Route::get()->name('Ten_route')
+		- Route với tham số
+			+ cho vào dấu ngoặc nhọn {ten-tham-so}
+				=> Route::get('/bai-viet{id}', 'BaiVietController@show')
+
+	* Route Group
+		=>  Route::group(['prefix' => '/bai-viet'], function() {
+				//viết route trong này
+			});
+
+	* validate biết trong route
+		=> Route::get('/bai-viet{id}', 'BaiVietController@show')
+			-> name('baiviet')
+			-> where('id' > '[0-9]+')
+
+4./ Controller và Request
+	+ Controller: 
+		- là sân chơi cho các model tương tác với nhau
+		- nơi nhận request
+		- tạo controller:
+			=> php artisan make:controller TenController
+			+ tên controller chữ cái đầu viết hoa
+
+	+ Request
+		- là 1 object chứa toàn bộ thông tin người dùng gởi lên
+		- nếu muốn dùng request thì phải cho vào tham số đầu tiên
+		- $request->all() : tra về một mãng tất cả các tham số được gởi lên
+		- $request->only('chuoi hoặc mãng') : lọc request
+			+ nếu là chuổi: trả về mãng có 1 tham số
+			+ nếu là mãng: trả về mãng có các tham số 
+		- $request->except('chuoi hoặc mãng') : loại trừ 
+		- $request->has('tham-so'): nếu có -> true nếu không -> false
+		- $request->input('title') = $request->title
+
+		- tạo request riêng:
+			=> php artisan make:request TenRequest
+
+	+ Response
+		- cách response của laravel: return của hàm ở controller
+		- return một view
+			=> return view('ten-file-view')
+		- return một view kèm data
+			=> return view('ten-file-view', ['data' => $data])
+		- return về trang trước đó 
+			=> return back();
+		- return về trang trước đó kèm data
+			=> return back()->with(['data', $data]);
+			=> return back()->withInput();
+		- trả về dạng json
+			=> return response()->json('gia-tri');
+		- chuyển trang: ( object )
+			=> return redirect()->route('route-name')
+		- chuyển trang ra ngoài: ( object )
+			=> return redirect()->away('url')
+
+5./ Fillable
+	
