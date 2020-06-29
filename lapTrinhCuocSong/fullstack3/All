@@ -63,6 +63,7 @@
 				- các câu lẹnh với migration
 					=> php artisan migrate : tạo bảng
 					=> php artisan migrate:rollback : xóa bảng nếu tồn tại
+					=> php artisan migrate:refresh : xóa bảng và migrate lại
 
 				- Schema:
 					+ bigIncrements: tự động tăng, kiểu big integer
@@ -143,4 +144,47 @@
 			=> return redirect()->away('url')
 
 5./ Fillable
+	=>    protected $fillable = [
+		        'name', 'email', 'password',
+		    ];
 	
+6./ Eloquent
+	- ORM: object relation mapping
+	- để 1 model lưu được dữ liệu xuống db: định nghĩa các field dưới db
+	- Create(array) : tạo ra 1 object model và lưu xuống db
+		+ model chỉ nhận các property được liệt kê trong biến fillable
+	- Khởi tạo bằng từ khóa new
+		=> new ModelName($attributes)
+
+	- find(): lấy 1 model từ db
+		=> find(tham-so): lấy model từ db -> trả về 1 object
+		=> find(array): lấy ra một tập hợp các object
+	- findOrFail(): giống như find() nhưng báo lỗi thân thiện khi không tìm thấy
+	- all(); trả về tất cả
+	- paginate(); phân trang
+	- where('key', 'value'): tìm kiếm theo điều kiện
+	- get(); fetch hết kết quả ra 
+	- not(); không phải
+	- counts(); đếm số lượng record
+	- max()
+	- min()
+	- limit()
+	- take(): giống limit()
+	+ Model chỉ đọc được db khi gặp hàm all(), paginate, find, findOrFail, counts
+	- orderBy(field, asc/desc)
+	- update()
+	- updateOrCreate()
+	- updateOrNew(): giống updateOrCreate()
+	- firstOrCreate()
+	- firstOrNew()
+	- delete()
+	- softDelete(); xóa mềm dữ liệu thực sẽ không mất
+		+ khai báo migration
+			=> $table->softDeletes()
+		+ Model
+			=> use Illuminate\Database\Eloquent\SoftDeletes;
+		+ Model class
+			=> use SoftDeletes; //trait
+
+		+ withTrashed(); lấy luôn những record đã xóa
+		+ onlyTrashed(); chỉ lấy những record đã xóa
