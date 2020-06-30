@@ -188,3 +188,45 @@
 
 		+ withTrashed(); lấy luôn những record đã xóa
 		+ onlyTrashed(); chỉ lấy những record đã xóa
+
+7./ CRUD ( Create, Read, Update, Delete )
+
+	- csrf_field
+	- Token: là 1 chuổi xác minh -> chuỗi khó đoán
+
+8./ Seeder: 
+	- bộ tạo dữ liệu ảo
+	- faker;
+		=> composer require fzaninotto/faker
+		+ doc: https://github.com/fzaninotto/Faker
+	- tạo seeder
+		=> php artisan make:seeder TenSeeder
+
+	- Dump-autoload
+		=> composer dump-autoload
+
+
+9./ Blade Template
+	- Tất cả các fil view có đuôi *.blade.php
+	- cấu trúc extends( master layout => child layout)
+	- @yield('content')
+	- @extends('layouts.master'): kế thừa giao diện chính
+	- @section('content'); định nghĩa content
+	- @endsection; kết thúc phần section trên
+
+	* hiển thị dữ liệu
+		- {{ biến }} : thay thế echo
+		- @foreach - @endforeach() : vòng lặp foreach
+		- @for - @endfor
+
+10./ Relationship
+	- Quan hệ giữa các model
+	- Quan hện 1 -n
+		+ $this->hasMany(): có nhiều (n)
+		+ $this->belongTo(): phụ thuộc vào (1)
+
+	- Quan hệ 1 - 1
+		$this->belongTo(): phụ thuộc (1)
+		$this->belongTo(): phụ thuộc (1)
+
+11./ Vue Js với Laravel
