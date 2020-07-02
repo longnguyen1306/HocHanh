@@ -1,0 +1,39 @@
+* Validation
+	- Request
+		+ function authorize : check đăng nhập
+
+	- rules
+		nhiều luật cách nhau bằng dâu ( | )
+		+ min:6 ; min, sau dấu 2 chấm (:) là tham số
+		+ max:255 ; lớn nhất
+		+ required; bắt buộc
+		+ date; ngày tháng
+		+ email; email
+		+ url: bắt buộc là địa chỉ web
+		+ alpha: từ a->z, 0->9
+		+ alpha_dash : từ a->z, 0->9, _
+		+ integer: bắt buộc là số
+		+ ip
+		+ ipv4
+		+ ipv6
+		+ numeric
+
+	- error
+		+ template 
+			@error('name')
+				{{ $message }}
+			@enderror
+
+		+ public function message() {
+			 return 'The :attribute must be uppercase.';		
+		  }
+
+		+ public function attributes() {
+			return [
+				'title' => 'tiêu đề'
+			]
+		}
+
+
+	- unique
+		+ unique:ten_bang_csdl : đọc xuống db nếu đã tồn tại -> lỗi

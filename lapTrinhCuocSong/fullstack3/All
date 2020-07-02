@@ -222,11 +222,16 @@
 10./ Relationship
 	- Quan hệ giữa các model
 	- Quan hện 1 -n
-		+ $this->hasMany(): có nhiều (n)
-		+ $this->belongTo(): phụ thuộc vào (1)
+		+ $this->hasMany('ten_class'): có nhiều (n)
+		+ $this->belongTo('ten_class'): phụ thuộc vào (1)
 
 	- Quan hệ 1 - 1
-		$this->belongTo(): phụ thuộc (1)
-		$this->belongTo(): phụ thuộc (1)
+		$this->belongTo('ten_class'): phụ thuộc (1)
+		$this->belongTo('ten_class'): phụ thuộc (1)
 
-11./ Vue Js với Laravel
+	- Quan hệ n - n
+		$this->belongToMany('ten_class'): đặt ở 2 model có quan hệ nhiều - nhiều
+
+11./ Gói UI của larvel ( user interface )
+	-https://laravel.com/docs/7.x/frontend
+
