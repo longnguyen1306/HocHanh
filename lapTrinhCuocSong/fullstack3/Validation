@@ -24,6 +24,14 @@
 				{{ $message }}
 			@enderror
 
+			- $errors: biến này có sẵn khi validate
+				@if($errors->has('name'))
+					{{ $message }}
+
+				@endif
+
+		- old('name'); lấy lại giá trị trước đó khi lỗi 
+		
 		+ public function message() {
 			 return 'The :attribute must be uppercase.';		
 		  }
@@ -33,7 +41,6 @@
 				'title' => 'tiêu đề'
 			]
 		}
-
 
 	- unique
 		+ unique:ten_bang_csdl : đọc xuống db nếu đã tồn tại -> lỗi

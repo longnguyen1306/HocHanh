@@ -1,0 +1,5 @@
+- là kỹ thuật lấy dữ liệu mà không cần load lại trang
+
+- laravel: vue js + axios
+	+ install: npm i axios
+	+ doc: https://www.npmjs.com/package/axios
